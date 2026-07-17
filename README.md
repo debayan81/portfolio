@@ -1,4 +1,4 @@
-# Debayan Das — Portfolio
+# Debayan Das - Portfolio
 
 A clean, responsive single-page developer portfolio built with plain HTML, CSS, and vanilla JavaScript. No build step, no dependencies.
 
@@ -11,7 +11,7 @@ A clean, responsive single-page developer portfolio built with plain HTML, CSS, 
 - Resume download button and social links
 
 ## Development
-It's a single file — just open `index.html` in a browser. To edit, change `index.html` and refresh.
+It's a single file - just open `index.html` in a browser. To edit, change `index.html` and refresh.
 
 ## Deployment
 Hosted on GitHub Pages from the `main` branch.
