@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debayan Das - Software Engineer</title>
-  <meta name="description" content="Debayan Das - B.E. student at Jadavpur University seeking SDE / SDE Intern roles. Systems, algorithms, and full-stack projects." />
+  <meta name="description" content="Debayan Das - B.E. student at Jadavpur University seeking SDE / SDE Intern roles. Systems, post-quantum cryptography, algorithms, and full-stack projects." />
 
   <!-- ===== Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -320,6 +320,7 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
+        <a href="#leadership">Leadership</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-right">
@@ -339,6 +340,7 @@
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#achievements">Achievements</a>
+      <a href="#leadership">Leadership</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -351,8 +353,8 @@
         <h1>Hi, I'm Debayan Das -<br><span class="grad">software engineer</span></h1>
         <p class="lead">
           B.E. student at Jadavpur University with a passion for low-level systems, algorithms,
-          and full-stack development. I build performance-focused software, from a memory-safe
-          post-quantum crypto library in Rust to AI SaaS platforms, and I've solved 500+ DSA problems along the way.
+          and full-stack development. I build performance-focused software, from a multithreaded
+          post-quantum multi-signature layer in C to AI SaaS platforms, and I've solved 800+ DSA problems along the way.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View my work →</a>
@@ -361,7 +363,8 @@
         <div class="hero-meta">
           <span>📍 Kolkata, West Bengal, India</span>
           <span>🎓 Jadavpur University · 2023–2027</span>
-          <span>⚔️ LeetCode Knight (1993)</span>
+          <span>⚔️ LeetCode Knight (2030)</span>
+          <span>📈 Codeforces Specialist (1522)</span>
         </div>
       </div>
     </section>
@@ -377,9 +380,10 @@
           I'm a final-year Electronics &amp; Telecommunication Engineering student at
           <strong style="color: var(--text);">Jadavpur University</strong> who fell in love with software.
           My interests span systems programming and competitive algorithms, backed by hands-on work in
-          <strong style="color: var(--text);">Rust cryptography research</strong> and full-stack web development.
-          I care about writing correct, efficient, and maintainable code - whether that's proving byte-for-byte
-          equivalence in a post-quantum signature port or shaving milliseconds off a heuristic search.
+          <strong style="color: var(--text);">post-quantum cryptography</strong> and full-stack web development.
+          I care about writing correct, efficient, and maintainable code, whether that's building a t-of-n
+          multi-signature layer over ML-DSA or shaving milliseconds off quorum verification with multithreading.
+          I also use agentic AI tools like Claude Code to go from design spec to compiling, benchmarked code fast.
           I'm currently seeking <strong style="color: var(--text);">SDE internship and SDE-1 opportunities</strong>
           where I can keep building things that matter.
         </p>
@@ -389,8 +393,8 @@
         <div class="edu card">
           <div>
             <h3>Jadavpur University</h3>
-            <div class="sub">B.E. - Electronics &amp; Tele-Communication Engineering</div>
-            <div class="cgpa">CGPA: 8.2 / 10</div>
+            <div class="sub">B.E. - Electronics &amp; Telecommunication Engineering</div>
+            <div class="cgpa">CGPA: 8.43 / 10</div>
           </div>
           <div class="date">2023 – 2027</div>
         </div>
@@ -414,15 +418,14 @@
 
       <div class="card reveal">
         <div class="exp-item">
-          <div class="when">June 2026 - Present</div>
+          <div class="when">Jun 2026 - Aug 2026</div>
           <div>
-            <h3>Cryptography Research Intern</h3>
+            <h3>Cryptography Developer Intern</h3>
             <div class="org">AlgoBengal Research Labs</div>
-            <div class="loc">Kolkata, India · On-site</div>
+            <div class="loc">Kolkata, India</div>
             <ul class="bullets">
-              <li>Architected a pure-Rust port of the <strong>CRYSTALS-Dilithium</strong> post-quantum signature scheme from C, enforcing <strong>zero <code class="mono">unsafe</code> code</strong> to guarantee complete memory safety in core systems.</li>
-              <li>Proved <strong>byte-for-byte functional equivalence</strong> against the C reference implementation by engineering and validating bi-directional FFI interoperability.</li>
-              <li>Actively participated in technical design discussions and incorporated code review feedback from cross-functional researchers to ensure high-quality, production-ready implementation.</li>
+              <li><strong>Post-Quantum Signature Flow Separation:</strong> Decomposed the <strong>CRYSTALS-Dilithium (ML-DSA)</strong> digital signature scheme into three separate CLI operators (keygen, sign, and verify) across all 3 NIST security levels using agentic AI (Claude Code), cutting manual C refactoring and build-system turnaround from <strong>2 weeks to 2 hours</strong>.</li>
+              <li><strong>Multi-Signature Layer:</strong> Delivered <strong>2,400 lines of warning-clean C99</strong> implementing a t-of-n multi-signature scheme over ML-DSA, taking the design specification straight to compiling, benchmarked code via agentic AI. Measured a <strong>4.02x verification latency reduction</strong> at a 100-of-100 quorum.</li>
             </ul>
           </div>
         </div>
@@ -438,43 +441,43 @@
       </div>
 
       <div class="projects">
+        <!-- Post-Quantum Multi-Signature -->
+        <article class="card reveal">
+          <div class="proj-head">
+            <h3>Post-Quantum Multi-Signature (ML-DSA)</h3>
+          </div>
+          <p class="proj-desc">
+            A t-of-n multi-signature layer in C on top of the NIST FIPS 204 (ML-DSA / CRYSTALS-Dilithium)
+            reference implementation, with 4 CLI tools (keygen, sign, combine, verify) across ML-DSA-44/65/87.
+            Multithreaded quorum verification with pthreads and early exit cut a 100-signature quorum from
+            <strong>7.66 ms to 1.90 ms (4.0x on 6 cores)</strong>, using cache-line padding to avoid false
+            sharing and strided work slices for load balance.
+          </p>
+          <div class="tags">
+            <span class="tag">C99</span><span class="tag">POSIX Threads</span>
+            <span class="tag">Applied Cryptography</span><span class="tag">ML-DSA</span><span class="tag">Benchmarking</span>
+          </div>
+        </article>
+
         <!-- SpeedAI -->
         <article class="card reveal">
           <div class="proj-head">
-            <h3>SpeedAI — AI SaaS Platform</h3>
+            <h3>SpeedAI - AI SaaS Platform</h3>
             <div class="proj-links">
               <a href="https://speed-ai-frontend-ak3x.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
               <a href="https://github.com/debayan81/SpeedAI-frontend" target="_blank" rel="noopener">Code ↗</a>
             </div>
           </div>
           <p class="proj-desc">
-            A modern AI SaaS web app (MERN-equivalent on Neon Postgres) offering AI image generation,
-            article writing, and a community platform. Integrated Clerk for secure auth and Cloudinary
-            for optimized media, with a highly responsive React 19 + Vite + Tailwind frontend.
+            A full-stack AI SaaS platform bringing five AI tools together: image generation, background
+            and object removal, resume feedback, article writing, and blog title generation. React + Tailwind
+            frontend, Node.js/Express backend on serverless Neon Postgres, secured with Clerk auth and powered
+            by Cloudinary's AI transformations and the Gemini API.
           </p>
           <div class="tags">
-            <span class="tag">React 19</span><span class="tag">Node.js</span>
+            <span class="tag">React</span><span class="tag">Node.js</span>
             <span class="tag">Express</span><span class="tag">Neon Postgres</span>
-            <span class="tag">Tailwind CSS</span><span class="tag">Clerk</span><span class="tag">Cloudinary</span>
-          </div>
-        </article>
-
-        <!-- Rubik's Cube Solver -->
-        <article class="card reveal">
-          <div class="proj-head">
-            <h3>Rubik's Cube Solver</h3>
-            <div class="proj-links">
-              <a href="https://github.com/debayan81/3x3-rubiks-cube-solver" target="_blank" rel="noopener">Code ↗</a>
-            </div>
-          </div>
-          <p class="proj-desc">
-            A high-performance 3×3 Rubik's Cube solver modeling the cube as a bitboard with advanced OOP
-            and bitmasking. Implements <strong>IDA*</strong> for optimal solutions within 15 moves
-            (&lt;10s average), accelerated by a custom BFS heuristic database and permutation indexer.
-          </p>
-          <div class="tags">
-            <span class="tag">C++</span><span class="tag">IDA*</span>
-            <span class="tag">Bitmasking</span><span class="tag">Heuristic Search</span><span class="tag">OOP</span>
+            <span class="tag">Tailwind CSS</span><span class="tag">Clerk</span><span class="tag">Cloudinary</span><span class="tag">Gemini API</span>
           </div>
         </article>
 
@@ -487,10 +490,10 @@
             </div>
           </div>
           <p class="proj-desc">
-            A thread-safe concurrent cache engine in C++ implementing <strong>LRU</strong> and
-            <strong>LFU</strong> eviction with <code class="mono">std::mutex</code> and templates for safe
-            parallel access. Includes an 80/20 locality workload generator benchmarked over
-            <strong>200,000+ parallel operations</strong>, logging hit/miss, eviction, and latency metrics.
+            A thread-safe cache engine in C++ implementing <strong>LRU</strong> and <strong>LFU</strong>
+            eviction with hash maps and doubly linked lists for O(1) get and put. Operations are parallelized
+            across threads for up to <strong>2.7x practical speedup</strong>, with <code class="mono">std::mutex</code>
+            guarding safe concurrent reads and writes.
           </p>
           <div class="tags">
             <span class="tag">C++</span><span class="tag">Multi-threading</span>
@@ -511,35 +514,44 @@
         <div class="skill-group card reveal">
           <h3>Languages</h3>
           <div class="tags">
-            <span class="tag">C / C++</span><span class="tag">Rust</span><span class="tag">Python</span>
-            <span class="tag">JavaScript (ES6+)</span><span class="tag">SQL</span>
-            <span class="tag">HTML5</span><span class="tag">CSS3</span>
+            <span class="tag">C / C++</span><span class="tag">Python</span><span class="tag">SQL</span>
+            <span class="tag">JavaScript</span><span class="tag">Rust</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span>
           </div>
         </div>
         <div class="skill-group card reveal">
-          <h3>Frameworks</h3>
+          <h3>Backend &amp; Web</h3>
           <div class="tags">
-            <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
-            <span class="tag">RESTful APIs</span><span class="tag">Responsive UI</span>
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">REST APIs</span>
+            <span class="tag">Multi-threading</span><span class="tag">React</span><span class="tag">Tailwind CSS</span>
           </div>
         </div>
         <div class="skill-group card reveal">
-          <h3>Databases</h3>
+          <h3>Databases &amp; Cloud</h3>
           <div class="tags">
-            <span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Neon Postgres</span>
+            <span class="tag">PostgreSQL (Neon serverless)</span><span class="tag">MySQL</span>
+            <span class="tag">Vercel</span><span class="tag">Cloudinary</span>
+          </div>
+        </div>
+        <div class="skill-group card reveal">
+          <h3>AI &amp; Agentic Tools</h3>
+          <div class="tags">
+            <span class="tag">Claude Code</span><span class="tag">Gemini API</span>
+            <span class="tag">GitHub Copilot</span><span class="tag">ChatGPT</span>
           </div>
         </div>
         <div class="skill-group card reveal">
           <h3>Tools</h3>
           <div class="tags">
-            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Linux</span>
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Linux</span>
+            <span class="tag">VS Code</span><span class="tag">Jupyter Notebook</span>
           </div>
         </div>
         <div class="skill-group card reveal">
-          <h3>Coursework</h3>
+          <h3>CS Fundamentals</h3>
           <div class="tags">
             <span class="tag">Data Structures &amp; Algorithms</span><span class="tag">OOP</span>
-            <span class="tag">DBMS</span><span class="tag">Operating Systems</span><span class="tag">Computer Networks</span>
+            <span class="tag">DBMS</span><span class="tag">Operating Systems</span>
           </div>
         </div>
       </div>
@@ -556,29 +568,54 @@
         <div class="card reveal">
           <div class="ico">🧩</div>
           <div>
-            <h3>500+ DSA Problems</h3>
+            <h3>800+ DSA Problems</h3>
             <p>Solved across LeetCode, Codeforces, and other competitive programming platforms.</p>
           </div>
         </div>
         <div class="card reveal">
           <div class="ico">⚔️</div>
           <div>
-            <h3>LeetCode Knight - 1993</h3>
-            <p>Highest rating of 1993, placing in the top competitive programming tier.</p>
+            <h3>LeetCode Knight &amp; CF Specialist</h3>
+            <p>LeetCode Knight (2030) and Codeforces Specialist (1522).</p>
           </div>
         </div>
         <div class="card reveal">
           <div class="ico">🎯</div>
           <div>
             <h3>Top Global Contest Ranks</h3>
-            <p>Ranked #198 globally in LeetCode Weekly Contest 500 and #394 in Weekly Contest 507.</p>
+            <p>Global #198 in LeetCode Biweekly Contest 500, #394 in LeetCode Weekly Contest 504, and #292 in Codeforces Round 1122 (Div. 3).</p>
           </div>
         </div>
         <div class="card reveal">
           <div class="ico">🏆</div>
           <div>
             <h3>Siemens Scholar</h3>
-            <p>Selected from 300+ candidates across India for academic and technical excellence.</p>
+            <p>Selected as a Siemens Scholar among only 300 candidates in Batch XI across India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEADERSHIP ============ -->
+    <section class="block wrap" id="leadership">
+      <div class="sec-head reveal">
+        <div class="kicker">Leadership</div>
+        <h2>Beyond code</h2>
+      </div>
+
+      <div class="ach">
+        <div class="card reveal">
+          <div class="ico">🤝</div>
+          <div>
+            <h3>Placement Coordinator</h3>
+            <p>Serving as student placement coordinator in the Jadavpur University Training &amp; Placement Cell.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🎪</div>
+          <div>
+            <h3>Core Organising Member, Sanskriti'26</h3>
+            <p>Led the core organising committee of F.E.T.S.U. presents Sanskriti'26, delivering 20+ flagship events over 9 days to 35K+ attendees.</p>
           </div>
         </div>
       </div>
@@ -604,8 +641,9 @@
       <div class="socials">
         <a href="https://www.linkedin.com/in/debayan-das-385ba1200/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">in</a>
         <a href="https://github.com/debayan81" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">GH</a>
-        <a href="https://leetcode.com/u/stack_empty/" target="_blank" rel="noopener" title="LeetCode — Problem Solving" aria-label="LeetCode Problem Solving">LC</a>
-        <a href="https://leetcode.com/u/only_cts/" target="_blank" rel="noopener" title="LeetCode — Contests" aria-label="LeetCode Contests">⚔️</a>
+        <a href="https://leetcode.com/u/stack_empty/" target="_blank" rel="noopener" title="LeetCode - Problem Solving" aria-label="LeetCode Problem Solving">LC</a>
+        <a href="https://leetcode.com/u/only_cts/" target="_blank" rel="noopener" title="LeetCode - Contests" aria-label="LeetCode Contests">⚔️</a>
+        <a href="https://codeforces.com/profile/debayan_das_" target="_blank" rel="noopener" title="Codeforces" aria-label="Codeforces">CF</a>
       </div>
     </div>
   </footer>
